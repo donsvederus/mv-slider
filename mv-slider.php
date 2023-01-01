@@ -31,15 +31,24 @@ along with MV Slider. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
 */
 
 // Exit if accessed directly
-if (!defined('ABSPATH')) {
+if (!defined('ABSPATH')){
     exit;
  }
 
-if(!class_exists('MV_Slider')){
-    class MV_Slider{
+if(!class_exists ('MV_Slider')){
+    class MV_Slider {
         function __construct(){
+            $this->define_constants();
+        }
+
+        public function define_constants(){
+            define('MV_SLIDER_PATH', plugin_dir_path( __FILE__ ));
+            define('MV_SLIDER_URL', plugin_dir_url( __FILE__ ));
+            define('MV_SLIDER_VERSION', '1.0.0' );
+
 
         }
+
     }
 }
 
